@@ -1,0 +1,35 @@
+﻿@model lr10.Models.ConsultationFormModel
+
+<form method="post">
+    <div>
+        <label>Ім'я прізвище:</label>
+        <input asp-for="FullName" />
+        <span asp-validation-for="FullName"></span>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label>Бажана дата консультації:</label>
+        <input asp-for="ConsultationDate" type="date" />
+        <span asp-validation-for="ConsultationDate"></span>
+    </div>
+    <div>
+        <label>Продукт:</label>
+        <select asp-for="Product">
+            <option value="JavaScript">JavaScript</option>
+            <option value="C#">C#</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="Основи">Основи</option>
+        </select>
+        <span asp-validation-for="Product"></span>
+    </div>
+    <button type="submit">Підтвердити</button>
+</form>
+
+@section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+}
